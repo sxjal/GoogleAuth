@@ -7,13 +7,13 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: 500,
-        width: 500,
+        height: double.infinity,
+        width: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Colors.blue,
-              Colors.blueAccent,
+              Color.fromARGB(255, 21, 50, 59),
+              Color.fromARGB(255, 60, 119, 121),
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.only(top: 100),
+              margin: const EdgeInsets.only(top: 100),
               child: const Text(
                 "Login",
                 style: TextStyle(
