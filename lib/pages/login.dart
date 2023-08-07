@@ -7,8 +7,8 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: double.maxFinite,
-        height: double.maxFinite,
+        height: 500,
+        width: 500,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
@@ -19,12 +19,17 @@ class LoginScreen extends StatelessWidget {
             end: Alignment.bottomCenter,
           ),
         ),
-        child: const Column(
+        child: Column(
           children: [
-            Text(
-              "Login",
-              style: TextStyle(
-                fontSize: 24,
+            Container(
+              margin: EdgeInsets.only(top: 100),
+              child: const Text(
+                "Login",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
             ),
           ],
