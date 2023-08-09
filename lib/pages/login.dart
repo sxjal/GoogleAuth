@@ -21,6 +21,7 @@ class LoginScreen extends StatelessWidget {
           ),
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.05,
@@ -139,16 +140,20 @@ class LoginScreen extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
             ),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                "Forgot Password",
-                textAlign: TextAlign.left,
-                style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    color: Color.fromARGB(255, 202, 202, 202),
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
+            Padding(
+              padding: EdgeInsets.only(
+                  right: MediaQuery.of(context).size.width * 0.2),
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  "Forgot Password",
+                  textAlign: TextAlign.left,
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      color: Color.fromARGB(255, 202, 202, 202),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
               ),
@@ -156,36 +161,40 @@ class LoginScreen extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
             ),
-            GestureDetector(
-              onTap: () {},
-              child: Container(
-                margin: const EdgeInsets.only(top: 0),
-                padding: const EdgeInsets.only(
-                  top: 5,
-                  left: 20,
-                  right: 10,
-                  bottom: 5,
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  color: const Color.fromARGB(255, 255, 255, 255),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      "ok",
-                      style: GoogleFonts.poppins(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: const Color.fromARGB(255, 60, 119, 121),
+            Padding(
+              padding: EdgeInsets.only(
+                  right: MediaQuery.of(context).size.width * 0.2),
+              child: GestureDetector(
+                onTap: () {},
+                child: Container(
+                  margin: const EdgeInsets.only(top: 0),
+                  padding: const EdgeInsets.only(
+                    top: 5,
+                    left: 20,
+                    right: 10,
+                    bottom: 5,
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(40),
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        "ok",
+                        style: GoogleFonts.poppins(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: const Color.fromARGB(255, 60, 119, 121),
+                        ),
                       ),
-                    ),
-                    const Icon(
-                      Icons.arrow_forward_sharp,
-                      color: Color.fromARGB(255, 60, 119, 121),
-                    ),
-                  ],
+                      const Icon(
+                        Icons.arrow_forward_sharp,
+                        color: Color.fromARGB(255, 60, 119, 121),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
