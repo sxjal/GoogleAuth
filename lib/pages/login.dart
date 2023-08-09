@@ -102,7 +102,6 @@ class LoginScreen extends StatelessWidget {
               ),
               child: Form(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextFormField(
                       autocorrect: false,
@@ -160,15 +159,33 @@ class LoginScreen extends StatelessWidget {
             GestureDetector(
               onTap: () {},
               child: Container(
+                margin: const EdgeInsets.only(top: 0),
+                padding: const EdgeInsets.only(
+                  top: 5,
+                  left: 20,
+                  right: 10,
+                  bottom: 5,
+                ),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(40),
                   color: const Color.fromARGB(255, 255, 255, 255),
                 ),
-                child: Text(
-                  "Sign in",
-                  style: GoogleFonts.poppins(
-                    color: const Color.fromARGB(255, 60, 119, 121),
-                  ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      "ok",
+                      style: GoogleFonts.poppins(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: const Color.fromARGB(255, 60, 119, 121),
+                      ),
+                    ),
+                    const Icon(
+                      Icons.arrow_forward_sharp,
+                      color: Color.fromARGB(255, 60, 119, 121),
+                    ),
+                  ],
                 ),
               ),
             ),
