@@ -153,17 +153,34 @@ class SignupScreen extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.018,
                       ),
-                      const Row(
+                      Row(
                         children: [
-                          Text(
+                          const Text(
                             "Birth",
                             style: TextStyle(
                                 color: Color.fromARGB(93, 255, 255, 255)),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          
+                          Form(
+                            child: Row(
+                              children: [
+                                TextFormField(
+                                  autocorrect: false,
+                                  obscureText: false,
+                                  style: const TextStyle(color: Colors.white),
+                                  initialValue: "01",
+                                  keyboardType: TextInputType.number,
+                                  cursorColor:
+                                      const Color.fromARGB(255, 197, 197, 197),
+                                  decoration: const InputDecoration(
+                                    border: InputBorder.none,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ],
