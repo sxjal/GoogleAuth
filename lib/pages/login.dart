@@ -27,7 +27,7 @@ class LoginScreen extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.05,
             ),
             Container(
-              margin: const EdgeInsets.all(20),
+              margin: EdgeInsets.all(MediaQuery.of(context).size.width * 0.08),
               child: Row(
                 children: [
                   const RotatedBox(
@@ -202,23 +202,33 @@ class LoginScreen extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.05,
             ),
-            Row(
-              children: [
-                const Text("Your first time?"),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Sign up",
+            Container(
+              margin: EdgeInsets.all(
+                MediaQuery.of(context).size.width * 0.08,
+              ),
+              child: Row(
+                children: [
+                  Text(
+                    "Your first time?",
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
+                      color: const Color.fromARGB(96, 255, 255, 255),
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Sign up",
+                      style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                          color: Color.fromARGB(171, 255, 255, 255),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w300,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),
