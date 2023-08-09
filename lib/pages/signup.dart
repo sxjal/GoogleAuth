@@ -27,15 +27,15 @@ class SignupScreen extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.05,
             ),
             Container(
-              margin: EdgeInsets.all(MediaQuery.of(context).size.width * 0.08),
+              margin: EdgeInsets.all(MediaQuery.of(context).size.width * 0.05),
               child: Row(
                 children: [
-                  const RotatedBox(
+                  RotatedBox(
                     quarterTurns: 3,
                     child: Text(
-                      "Sign Up",
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 255, 255, 255),
+                      "Sign up",
+                      style: GoogleFonts.poppins(
+                        color: const Color.fromARGB(255, 255, 255, 255),
                         fontSize: 56,
                         fontWeight: FontWeight.bold,
                       ),
@@ -49,12 +49,9 @@ class SignupScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        height: MediaQuery.of(context).size.height * 0.1,
-                      ),
-                      Container(
                         margin: const EdgeInsets.all(5),
                         child: const Text(
-                          "A world of",
+                          "We can start",
                           textAlign: TextAlign.start,
                           style: TextStyle(
                             color: Color.fromARGB(255, 227, 223, 223),
@@ -66,7 +63,7 @@ class SignupScreen extends StatelessWidget {
                       Container(
                         margin: const EdgeInsets.all(5),
                         child: const Text(
-                          "possibility in",
+                          "something",
                           textAlign: TextAlign.start,
                           style: TextStyle(
                             color: Color.fromARGB(255, 227, 223, 223),
@@ -78,7 +75,7 @@ class SignupScreen extends StatelessWidget {
                       Container(
                         margin: const EdgeInsets.all(5),
                         child: const Text(
-                          "an app",
+                          "new",
                           textAlign: TextAlign.start,
                           style: TextStyle(
                             color: Color.fromARGB(255, 227, 223, 223),
@@ -111,6 +108,23 @@ class SignupScreen extends StatelessWidget {
                       decoration: const InputDecoration(
                         label: Text(
                           "Name",
+                          style: TextStyle(
+                              color: Color.fromARGB(93, 255, 255, 255)),
+                        ),
+                        border: InputBorder.none,
+                      ),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.01,
+                    ),
+                    TextFormField(
+                      autocorrect: false,
+                      obscureText: true,
+                      style: const TextStyle(color: Colors.white),
+                      cursorColor: const Color.fromARGB(255, 197, 197, 197),
+                      decoration: const InputDecoration(
+                        label: Text(
+                          "Password",
                           style: TextStyle(
                               color: Color.fromARGB(93, 255, 255, 255)),
                         ),

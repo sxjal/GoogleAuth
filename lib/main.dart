@@ -5,7 +5,7 @@ import 'package:googleauth/pages/signup.dart';
 void main() {
   runApp(
     const MaterialApp(
-      home: SignupScreen(),
+      home: LoginScreen(),
     ),
   );
 }
