@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class LoginScreen extends StatelessWidget {
                   const RotatedBox(
                     quarterTurns: 3,
                     child: Text(
-                      "Sign in",
+                      "Sign Up",
                       style: TextStyle(
                         color: Color.fromARGB(255, 255, 255, 255),
                         fontSize: 56,
@@ -220,9 +220,9 @@ class LoginScreen extends StatelessWidget {
                       "Sign up",
                       style: GoogleFonts.poppins(
                         textStyle: const TextStyle(
-                          color: Color.fromARGB(203, 255, 255, 255),
+                          color: Color.fromARGB(171, 255, 255, 255),
                           fontSize: 14,
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w300,
                         ),
                       ),
                     ),
