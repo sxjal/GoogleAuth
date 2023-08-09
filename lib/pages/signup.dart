@@ -160,6 +160,10 @@ class SignupScreen extends StatelessWidget {
                             style: TextStyle(
                                 color: Color.fromARGB(93, 255, 255, 255)),
                           ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          
                         ],
                       ),
                     ],
@@ -167,7 +171,7 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.04,
+                height: MediaQuery.of(context).size.height * 0.15,
               ),
               Padding(
                 padding: EdgeInsets.only(
@@ -223,7 +227,7 @@ class SignupScreen extends StatelessWidget {
                           textStyle: const TextStyle(
                             color: Color.fromARGB(204, 255, 255, 255),
                             fontSize: 14,
-                            fontWeight: FontWeight.w300,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
