@@ -122,11 +122,12 @@ class LoginScreen extends StatelessWidget {
                     ),
                     TextFormField(
                       autocorrect: false,
+                      obscureText: true,
                       style: const TextStyle(color: Colors.white),
                       cursorColor: const Color.fromARGB(255, 197, 197, 197),
                       decoration: const InputDecoration(
                         label: Text(
-                          "Name",
+                          "Password",
                           style: TextStyle(
                               color: Color.fromARGB(93, 255, 255, 255)),
                         ),
@@ -138,11 +139,11 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.01,
+              height: MediaQuery.of(context).size.height * 0.04,
             ),
             Padding(
               padding: EdgeInsets.only(
-                  right: MediaQuery.of(context).size.width * 0.2),
+                  right: MediaQuery.of(context).size.width * 0.10),
               child: TextButton(
                 onPressed: () {},
                 child: Text(
@@ -159,11 +160,11 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.01,
+              height: MediaQuery.of(context).size.height * 0.05,
             ),
             Padding(
               padding: EdgeInsets.only(
-                  right: MediaQuery.of(context).size.width * 0.2),
+                  right: MediaQuery.of(context).size.width * 0.15),
               child: GestureDetector(
                 onTap: () {},
                 child: Container(
@@ -197,6 +198,27 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.05,
+            ),
+            Row(
+              children: [
+                const Text("Your first time?"),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Sign up",
+                    style: GoogleFonts.poppins(
+                      textStyle: const TextStyle(
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
