@@ -3,7 +3,21 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:googleauth/pages/login.dart';
 
 class SignupScreen extends StatelessWidget {
-  const SignupScreen({super.key});
+  SignupScreen({super.key});
+  //adding controllers
+  final _namecontroller = TextEditingController();
+  final _emailcontroller = TextEditingController();
+  final _passwordcontroller = TextEditingController();
+  final _confirmpasswordcontroller = TextEditingController();
+  final _formkey = GlobalKey<FormState>();
+  final _datecontroller = TextEditingController();
+  final _monthcontroller = TextEditingController();
+  final _yearcontroller = TextEditingController();
+
+  void submitted() {
+    return;
+    
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -153,34 +167,21 @@ class SignupScreen extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.018,
                       ),
-                      Row(
+                      const Row(
                         children: [
-                          const Text(
+                          Text(
                             "Birth",
                             style: TextStyle(
                                 color: Color.fromARGB(93, 255, 255, 255)),
                           ),
-                          const SizedBox(
+                          SizedBox(
                             width: 10,
                           ),
                           Form(
                             child: Row(
-                              children: [
-                                TextFormField(
-                                  autocorrect: false,
-                                  obscureText: false,
-                                  style: const TextStyle(color: Colors.white),
-                                  initialValue: "01",
-                                  keyboardType: TextInputType.number,
-                                  cursorColor:
-                                      const Color.fromARGB(255, 197, 197, 197),
-                                  decoration: const InputDecoration(
-                                    border: InputBorder.none,
-                                  ),
-                                ),
-                              ],
+                              children: [],
                             ),
-                          ),
+                          )
                         ],
                       ),
                     ],
