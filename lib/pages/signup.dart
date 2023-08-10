@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:googleauth/pages/login.dart';
 
@@ -45,7 +46,6 @@ class _SignupScreenState extends State<SignupScreen> {
     _monthcontroller.dispose();
     _yearcontroller.dispose();
     super.dispose();
-
   }
 
   void _showDialog() {
@@ -236,19 +236,28 @@ class _SignupScreenState extends State<SignupScreen> {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.018,
                       ),
-                      const Row(
+                      Row(
                         children: [
-                          Text(
+                          const Text(
                             "Birth",
                             style: TextStyle(
                                 color: Color.fromARGB(93, 255, 255, 255)),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Form(
                             child: Row(
-                              children: [],
+                              children: [
+                                Expanded(
+                                  child: TextFormField(
+                                    initialValue: "01",
+                                    decoration: InputDecoration(
+                                      label: Text("date"),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           )
                         ],
