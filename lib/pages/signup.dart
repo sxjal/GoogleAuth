@@ -243,23 +243,35 @@ class _SignupScreenState extends State<SignupScreen> {
                             style: TextStyle(
                                 color: Color.fromARGB(93, 255, 255, 255)),
                           ),
-                          const SizedBox(
+                          SizedBox(
                             width: 10,
                           ),
-                          Form(
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: TextFormField(
-                                    initialValue: "01",
-                                    decoration: InputDecoration(
-                                      label: Text("date"),
+                          DropdownButton(
+                            value: _selectedcategory,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                            ),
+                            items: Category.values
+                                .map(
+                                  (category) => DropdownMenuItem(
+                                    value: category,
+                                    child: Text(
+                                      category.name.toUpperCase(),
+                                      //category.name,
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          )
+                                )
+                                .toList(),
+                            onChanged: (value) {
+                              if (value == null) {
+                                return;
+                              }
+                              setState(() {
+                                _selectedcategory = value;
+                              });
+                            },
+                          ),
                         ],
                       ),
                     ],
