@@ -5,8 +5,14 @@ import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 import 'package:googleauth/pages/login.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
   SignupScreen({super.key});
+
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
   //adding controllers
   final _namecontroller = TextEditingController();
   final _emailcontroller = TextEditingController();
@@ -24,7 +30,10 @@ class SignupScreen extends StatelessWidget {
         _confirmpasswordcontroller.text.isEmpty ||
         _datecontroller.text.isEmpty ||
         _monthcontroller.text.isEmpty ||
-        _yearcontroller.text.isEmpty) _showDialog();
+        _yearcontroller.text.isEmpty) {
+      _showDialog();
+      return;
+    }
   }
 
   void _showDialog() {
