@@ -259,8 +259,13 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                       Row(
                         children: [
+                          const Text(
+                            "Birth",
+                            style: TextStyle(
+                                color: Color.fromARGB(93, 255, 255, 255)),
+                          ),
                           const SizedBox(
-                            width: 10,
+                            width: 30,
                           ),
                           Expanded(
                             child: Row(
@@ -268,6 +273,10 @@ class _SignupScreenState extends State<SignupScreen> {
                                 Expanded(
                                   child: TextFormField(
                                     initialValue: "01",
+                                    controller: _datecontroller,
+                                    decoration: const InputDecoration(
+                                      border: InputBorder.none,
+                                    ),
                                   ),
                                 ),
                                 Flexible(
