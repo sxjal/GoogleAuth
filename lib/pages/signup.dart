@@ -15,8 +15,13 @@ class SignupScreen extends StatelessWidget {
   final _yearcontroller = TextEditingController();
 
   void submitted() {
-    return;
-    
+    if (_namecontroller.text.isEmpty ||
+        _emailcontroller.text.isEmpty ||
+        _passwordcontroller.text.isEmpty ||
+        _confirmpasswordcontroller.text.isEmpty ||
+        _datecontroller.text.isEmpty ||
+        _monthcontroller.text.isEmpty ||
+        _yearcontroller.text.isEmpty) return;
   }
 
   @override
