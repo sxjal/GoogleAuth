@@ -36,6 +36,18 @@ class _SignupScreenState extends State<SignupScreen> {
     }
   }
 
+  void dispose() {
+    _namecontroller.dispose();
+    _emailcontroller.dispose();
+    _passwordcontroller.dispose();
+    _confirmpasswordcontroller.dispose();
+    _datecontroller.dispose();
+    _monthcontroller.dispose();
+    _yearcontroller.dispose();
+    super.dispose();
+
+  }
+
   void _showDialog() {
     if (Platform.isIOS) {
       //print("platform it ios");
