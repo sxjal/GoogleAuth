@@ -27,7 +27,8 @@ class _SignupScreenState extends State<SignupScreen> {
   final _yearcontroller = TextEditingController();
 
   //selected variables
-  var _selecteddate = 1;
+  var _selectedyear = "1993";
+  var yearlist = <DropdownMenuItem>[];
   void submitted() {
     if (_namecontroller.text.isEmpty ||
         _emailcontroller.text.isEmpty ||
@@ -42,20 +43,39 @@ class _SignupScreenState extends State<SignupScreen> {
   }
 
   void init() {
-    int values = 30;
-    super.initState();
-    for (var i = 1; i <= values; i++) {
-      datelist.add(DropdownMenuItem(
-        value: i,
-        child: Text(i.toString()),
-      ));
-      if (i < 13) {
-        monthlist.add(DropdownMenuItem(
-          value: i,
-          child: Text(i.toString()),
-        ));
-      }
-    }
+    DateTime now = new DateTime.now();
+    DateTime date = new DateTime(now.year, now.month, now.day);
+
+    // for (String i = "1993"; i != date.year.toString();) {
+    //   datelist.add(DropdownMenuItem(
+    //     value: i,
+    //     child: Text(i.toString()),
+    //   ));
+    //   if (i < 13) {
+    //     monthlist.add(DropdownMenuItem(
+    //       value: i,
+    //       child: Text(i.toString()),
+    //     ));
+    //   }
+    // }
+    yearlist = [
+      DropdownMenuItem(
+        value: "1993",
+        child: Text("1993"),
+      ),
+      DropdownMenuItem(
+        value: "1994",
+        child: Text("1994"),
+      ),
+      DropdownMenuItem(
+        value: "1993",
+        child: Text("1995"),
+      ),
+      DropdownMenuItem(
+        value: "1993",
+        child: Text("1995"),
+      ),
+    ];
   }
 
   void dispose() {
@@ -111,6 +131,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
   @override
   Widget build(BuildContext context) {
+    init();
     return Scaffold(
       body: GestureDetector(
         onTap: () {
@@ -262,7 +283,8 @@ class _SignupScreenState extends State<SignupScreen> {
                           const Text(
                             "Birth",
                             style: TextStyle(
-                                color: Color.fromARGB(93, 255, 255, 255)),
+                              color: Color.fromARGB(93, 255, 255, 255),
+                            ),
                           ),
                           const SizedBox(
                             width: 30,
@@ -270,41 +292,76 @@ class _SignupScreenState extends State<SignupScreen> {
                           Expanded(
                             child: Row(
                               children: <Widget>[
-                                Expanded(
+                                Flexible(
                                   child: TextFormField(
                                     initialValue: "01",
-                                    controller: _datecontroller,
+                                    validator: (value) => value!.isEmpty
+                                        ? "Please enter a valid date"
+                                        : null,
+                                    //  controller: _datecontroller,
+                                    keyboardType: TextInputType.number,
                                     decoration: const InputDecoration(
                                       border: InputBorder.none,
+                                      fillColor: Colors.white,
+                                      focusColor: Colors.white,
                                     ),
+                                    style: const TextStyle(
+                                      color: Color.fromARGB(93, 255, 255, 255),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    cursorColor:
+                                        const Color.fromARGB(93, 255, 255, 255),
+                                    onChanged: (value) {
+                                      setState(() {
+                                        _datecontroller.text = value;
+                                      });
+                                    },
                                   ),
                                 ),
                                 Flexible(
                                   child: TextFormField(
-                                    initialValue: "02",
+                                    initialValue: "03",
+                                    validator: (value) => value!.isEmpty
+                                        ? "Please enter a valid month"
+                                        : null,
+                                    //  controller: _datecontroller,
+                                    keyboardType: TextInputType.number,
                                     decoration: const InputDecoration(
-                                      hintStyle: TextStyle(color: Colors.white),
+                                      border: InputBorder.none,
+                                      fillColor: Colors.white,
+                                      focusColor: Colors.white,
                                     ),
+                                    style: const TextStyle(
+                                      color: Color.fromARGB(93, 255, 255, 255),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    cursorColor:
+                                        const Color.fromARGB(93, 255, 255, 255),
+                                    onChanged: (value) {
+                                      setState(() {
+                                        _datecontroller.text = value;
+                                      });
+                                    },
                                   ),
                                 ),
                               ],
                             ),
                           ),
                           DropdownButton(
-                            value: _selecteddate,
+                            value: _selectedyear,
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 14,
                             ),
                             dropdownColor:
                                 const Color.fromARGB(255, 21, 50, 59),
-                            items: datelist,
+                            items: yearlist,
                             onChanged: (value) {
                               if (value == null) {
                                 return;
                               }
                               setState(() {
-                                _selecteddate = value;
+                                _selectedyear = value;
                               });
                             },
                           ),
