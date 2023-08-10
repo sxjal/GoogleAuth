@@ -259,18 +259,26 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                       Row(
                         children: [
-                          const Text(
-                            "Birth",
-                            style: TextStyle(
-                                color: Color.fromARGB(93, 255, 255, 255)),
-                          ),
                           const SizedBox(
                             width: 10,
                           ),
-                          TextField(
-                            decoration: InputDecoration(
-                              hintText: 'Enter Date',
-                              hintStyle: TextStyle(color: Colors.white),
+                          Expanded(
+                            child: Row(
+                              children: <Widget>[
+                                Expanded(
+                                  child: TextFormField(
+                                    initialValue: "01",
+                                  ),
+                                ),
+                                Flexible(
+                                  child: TextFormField(
+                                    initialValue: "02",
+                                    decoration: const InputDecoration(
+                                      hintStyle: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                           DropdownButton(
