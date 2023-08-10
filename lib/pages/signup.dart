@@ -15,6 +15,8 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   //adding controllers
+  var datelist = <DropdownMenuItem>[];
+  var monthlist = [];
   final _namecontroller = TextEditingController();
   final _emailcontroller = TextEditingController();
   final _passwordcontroller = TextEditingController();
@@ -24,6 +26,8 @@ class _SignupScreenState extends State<SignupScreen> {
   final _monthcontroller = TextEditingController();
   final _yearcontroller = TextEditingController();
 
+  //selected variables
+  var _selecteddate = 1;
   void submitted() {
     if (_namecontroller.text.isEmpty ||
         _emailcontroller.text.isEmpty ||
@@ -34,6 +38,23 @@ class _SignupScreenState extends State<SignupScreen> {
         _yearcontroller.text.isEmpty) {
       _showDialog();
       return;
+    }
+  }
+
+  void init() {
+    int values = 30;
+    super.initState();
+    for (var i = 1; i <= values; i++) {
+      datelist.add(DropdownMenuItem(
+        value: i,
+        child: Text(i.toString()),
+      ));
+      if (i < 13) {
+        monthlist.add(DropdownMenuItem(
+          value: i,
+          child: Text(i.toString()),
+        ));
+      }
     }
   }
 
@@ -243,32 +264,30 @@ class _SignupScreenState extends State<SignupScreen> {
                             style: TextStyle(
                                 color: Color.fromARGB(93, 255, 255, 255)),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
+                          TextField(
+                            decoration: InputDecoration(
+                              hintText: 'Enter Date',
+                              hintStyle: TextStyle(color: Colors.white),
+                            ),
+                          ),
                           DropdownButton(
-                            value: _selectedcategory,
+                            value: _selecteddate,
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 14,
                             ),
-                            items: Category.values
-                                .map(
-                                  (category) => DropdownMenuItem(
-                                    value: category,
-                                    child: Text(
-                                      category.name.toUpperCase(),
-                                      //category.name,
-                                    ),
-                                  ),
-                                )
-                                .toList(),
+                            dropdownColor:
+                                const Color.fromARGB(255, 21, 50, 59),
+                            items: datelist,
                             onChanged: (value) {
                               if (value == null) {
                                 return;
                               }
                               setState(() {
-                                _selectedcategory = value;
+                                _selecteddate = value;
                               });
                             },
                           ),
