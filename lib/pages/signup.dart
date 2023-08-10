@@ -63,28 +63,45 @@ class _SignupScreenState extends State<SignupScreen> {
         value: "1993",
         child: Text(
           "1993",
-          style: TextStyle(color: Color.fromARGB(93, 255, 255, 255)),
+          style: TextStyle(
+            color: Color.fromARGB(
+              93,
+              255,
+              255,
+              255,
+            ),
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       DropdownMenuItem(
         value: "1994",
         child: Text(
           "1994",
-          style: TextStyle(color: Color.fromARGB(93, 255, 255, 255)),
+          style: TextStyle(
+            color: Color.fromARGB(93, 255, 255, 255),
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       DropdownMenuItem(
         value: "1995",
         child: Text(
           "1995",
-          style: TextStyle(color: Color.fromARGB(93, 255, 255, 255)),
+          style: TextStyle(
+            color: Color.fromARGB(93, 255, 255, 255),
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       DropdownMenuItem(
         value: "1996",
         child: Text(
           "1996",
-          style: TextStyle(color: Color.fromARGB(93, 255, 255, 255)),
+          style: TextStyle(
+            color: Color.fromARGB(93, 255, 255, 255),
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     ];
