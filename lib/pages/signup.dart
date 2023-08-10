@@ -377,6 +377,12 @@ class _SignupScreenState extends State<SignupScreen> {
                             ),
                           ),
                           DropdownButton(
+                            autofocus: true,
+                            underline: const SizedBox(),
+                            icon: const Icon(
+                              Icons.keyboard_arrow_down_outlined,
+                              color: Color.fromARGB(93, 255, 255, 255),
+                            ),
                             value: _selectedyear,
                             style: const TextStyle(
                               color: Colors.white,
