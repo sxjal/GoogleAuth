@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 import 'package:googleauth/pages/login.dart';
@@ -21,7 +24,47 @@ class SignupScreen extends StatelessWidget {
         _confirmpasswordcontroller.text.isEmpty ||
         _datecontroller.text.isEmpty ||
         _monthcontroller.text.isEmpty ||
-        _yearcontroller.text.isEmpty) return;
+        _yearcontroller.text.isEmpty) _showDialog();
+  }
+
+  void _showDialog() {
+    if (Platform.isIOS) {
+      //print("platform it ios");
+      showCupertinoDialog(
+        context: context,
+        builder: (ctx) => CupertinoAlertDialog(
+          title: const Text('Invalid Input'),
+          content:
+              const Text('Please enter valid Title, Amount, Date & Category!'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Okay'),
+            )
+          ],
+        ),
+      );
+    } else {
+      //print("platform it android");
+      showDialog(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const Text('Invalid Input'),
+          content:
+              const Text('Please enter valid Title, Amount, Date & Category!'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Okay'),
+            )
+          ],
+        ),
+      );
+    }
   }
 
   @override
