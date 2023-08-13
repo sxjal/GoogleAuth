@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:googleauth/pages/login.dart';
 
@@ -43,27 +42,16 @@ class _SignupScreenState extends State<SignupScreen> {
   }
 
   void init() {
-    DateTime now = new DateTime.now();
-    DateTime date = new DateTime(now.year, now.month, now.day);
-
-    // for (String i = "1993"; i != date.year.toString();) {
-    //   datelist.add(DropdownMenuItem(
-    //     value: i,
-    //     child: Text(i.toString()),
-    //   ));
-    //   if (i < 13) {
-    //     monthlist.add(DropdownMenuItem(
-    //       value: i,
-    //       child: Text(i.toString()),
-    //     ));
-    //   }
-    // }
-    yearlist = const [
-      DropdownMenuItem(
-        value: "1993",
+    DateTime now = DateTime.now();
+    DateTime date = DateTime(now.year, now.month, now.day);
+    date.year;
+    yearlist = List<DropdownMenuItem>.generate(
+      20,
+      (int index) => DropdownMenuItem(
+        value: index + 1994,
         child: Text(
-          "1993",
-          style: TextStyle(
+          (index + 1994).toString(),
+          style: const TextStyle(
             color: Color.fromARGB(
               93,
               255,
@@ -74,39 +62,11 @@ class _SignupScreenState extends State<SignupScreen> {
           ),
         ),
       ),
-      DropdownMenuItem(
-        value: "1994",
-        child: Text(
-          "1994",
-          style: TextStyle(
-            color: Color.fromARGB(93, 255, 255, 255),
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-      DropdownMenuItem(
-        value: "1995",
-        child: Text(
-          "1995",
-          style: TextStyle(
-            color: Color.fromARGB(93, 255, 255, 255),
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-      DropdownMenuItem(
-        value: "1996",
-        child: Text(
-          "1996",
-          style: TextStyle(
-            color: Color.fromARGB(93, 255, 255, 255),
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-    ];
+      growable: false,
+    );
   }
 
+  @override
   void dispose() {
     _namecontroller.dispose();
     _emailcontroller.dispose();
@@ -180,7 +140,7 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.05,
@@ -409,36 +369,73 @@ class _SignupScreenState extends State<SignupScreen> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.15,
               ),
-              Padding(
-                padding: EdgeInsets.only(
-                    right: MediaQuery.of(context).size.width * 0.15),
-                child: GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    // margin: const EdgeInsets.only(top: 0),
-                    padding: const EdgeInsets.only(
-                      top: 5,
-                      left: 20,
-                      right: 20,
-                      bottom: 5,
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(40),
-                      color: const Color.fromARGB(255, 255, 255, 255),
-                    ),
-                    child: const Icon(
-                      Icons.arrow_forward_sharp,
-                      color: Color.fromARGB(255, 60, 119, 121),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                        right: MediaQuery.of(context).size.width * 0.15),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        // margin: const EdgeInsets.only(top: 0),
+                        padding: const EdgeInsets.only(
+                          top: 5,
+                          left: 20,
+                          right: 20,
+                          bottom: 5,
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(40),
+                          color: const Color.fromARGB(255, 255, 255, 255),
+                        ),
+                        child: const Icon(
+                          Icons.arrow_forward_sharp,
+                          color: Color.fromARGB(255, 60, 119, 121),
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.05,
               ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.08),
+                child: Row(
+                  children: [
+                    Text(
+                      "wanna use ",
+                      style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                          color: Color.fromARGB(175, 205, 205, 205),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Google?",
+                        style: GoogleFonts.poppins(
+                          textStyle: const TextStyle(
+                            color: Color.fromARGB(255, 64, 62, 62),
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Container(
-                margin: EdgeInsets.all(
-                  MediaQuery.of(context).size.width * 0.08,
+                margin: EdgeInsets.only(
+                  // top: MediaQuery.of(context).size.width * 0.08,
+                  left: MediaQuery.of(context).size.width * 0.08,
                 ),
                 child: Row(
                   children: [
