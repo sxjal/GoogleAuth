@@ -46,9 +46,9 @@ class _SignupScreenState extends State<SignupScreen> {
     DateTime date = DateTime(now.year, now.month, now.day);
 
     yearlist = List<DropdownMenuItem>.generate(
-      20,
+      date.year - 1990,
       (int index) => DropdownMenuItem(
-        value: index + 1994,
+        value: index + 1984,
         child: Text(
           (index + 1994).toString(),
           style: const TextStyle(
@@ -354,12 +354,12 @@ class _SignupScreenState extends State<SignupScreen> {
                             dropdownColor:
                                 const Color.fromARGB(255, 21, 50, 59),
                             items: yearlist,
-                            onChanged: (value) {
-                              if (value == null) {
+                            onChanged: (selected) {
+                              if (selected == null) {
                                 return;
                               }
                               setState(() {
-                                _selectedyear = value.value;
+                                _selectedyear = selected.value;
                               });
                             },
                           ),

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1020081367824",
+    "project_id": "auth-cb50d",
+    "storage_bucket": "auth-cb50d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020081367824:android:71f4b81e4059b239981395",
+        "android_client_info": {
+          "package_name": "com.example.googleauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020081367824-de7k0v1ddipvse3ov861ji48gsji2p46.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD44_C1UbLrks4RdisIrbQHpcbsNvHpnwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020081367824-de7k0v1ddipvse3ov861ji48gsji2p46.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1020081367824-h7lum1humcp2m95rhrc14r46jmbk1f3s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.googleauth"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
