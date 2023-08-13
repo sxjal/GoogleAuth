@@ -26,7 +26,7 @@ class _SignupScreenState extends State<SignupScreen> {
   final _yearcontroller = TextEditingController();
 
   //selected variables
-  var _selectedyear = "1993";
+  var _selectedyear;
   var yearlist = <DropdownMenuItem>[];
   void submitted() {
     if (_namecontroller.text.isEmpty ||
@@ -44,7 +44,7 @@ class _SignupScreenState extends State<SignupScreen> {
   void init() {
     DateTime now = DateTime.now();
     DateTime date = DateTime(now.year, now.month, now.day);
-    date.year;
+
     yearlist = List<DropdownMenuItem>.generate(
       20,
       (int index) => DropdownMenuItem(
@@ -62,8 +62,11 @@ class _SignupScreenState extends State<SignupScreen> {
           ),
         ),
       ),
-      growable: false,
+      growable: true,
     );
+    for (var i in yearlist) print(i.child);
+
+    _selectedyear = yearlist[0].value;
   }
 
   @override
@@ -356,7 +359,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                 return;
                               }
                               setState(() {
-                                _selectedyear = value;
+                                _selectedyear = value.value;
                               });
                             },
                           ),
