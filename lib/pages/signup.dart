@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:googleauth/pages/login.dart';
 
 class SignupScreen extends StatefulWidget {
-  SignupScreen({super.key});
+  const SignupScreen({super.key});
 
   @override
   State<SignupScreen> createState() => _SignupScreenState();
@@ -26,7 +26,7 @@ class _SignupScreenState extends State<SignupScreen> {
   final _yearcontroller = TextEditingController();
 
   //selected variables
-  var _selectedyear;
+  var _selectedyear = 0;
   var yearlist = <DropdownMenuItem>[];
   void submitted() {
     if (_namecontroller.text.isEmpty ||
@@ -224,6 +224,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       top: MediaQuery.of(context).size.height * 0.022,
                     ),
                     child: Form(
+                      key: _formkey,
                       child: Column(
                         children: [
                           TextFormField(
